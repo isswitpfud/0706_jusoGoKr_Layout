@@ -85,19 +85,50 @@ $(function () {
 
 
     /* 도로명 주소 클래스 속성 추가/제거 div#contentsArea ul#sudUl>li */
-    $("ul#subUl>li").click(function(){
+    $("ul#subUl>li").click(function () {
         $("ul#subUl>li").removeClass("selected");
 
         $(this).addClass("selected");
     });
 
 
-    $("ul#subUl>li:nth-child(2)").click(function(){
-        $("div#article").animate(
-        {"margin-left":"-900px"},
-        900
+    $("ul#subUl>li:nth-child(2)").click(function () {
+        $("div#article").animate({
+                "margin-left": "-900px"
+            },
+            900
         );
     });
+
+
+    /*개발자센터 페이지(활용서비스) 이동*/
+
+
+
+    $("div.apiBox").eq(0).click(function () {
+        //eq()--> 0부터 시작, 숫자지정
+        //location.href="addrlink/developerCenter_01.html";  --> 현재창에서 오픈
+        window.open("addrlink/developerCenter_01.html"); //--> 새로운 창에서 오픈
+        return false; //클릭후 페이지가 위로 올라가는 현상을 막아줌
+    });
+
+    $("div.apiBox").eq(1).click(function () {
+        window.open("addrlink/developerCenter_02.html");
+         return false;
+    });
+
+    $("div.apiBox").eq(2).click(function () {
+        window.open("addrlink/developerCenter_03.html");
+         return false;
+    });
+
+    $("div.apiBox").eq(3).click(function () {
+        window.open("addrlink/developerCenter_04.html");
+         return false;
+    });
+
+
+
 
 
 
