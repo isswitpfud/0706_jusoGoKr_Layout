@@ -358,7 +358,8 @@ div#serviceArea {
 #srcContents {
     width: 1200px;
     margin: 0 auto;
-    padding: 60px 0;
+    padding: 50px 0 80px;
+    justify-content: space-between;
 }
 
 #srcContents h3 {
@@ -373,7 +374,7 @@ div#serviceArea {
 
 #srcContents #articleService #api {
     padding: 45px 10px;
-    width: 590px;
+    width: 600px;
     height: 240px;
     text-align: center;
 
@@ -417,41 +418,47 @@ div#serviceArea {
     display: block;
 }
 
+#alimpan, #doumCenter{
+    width: 276px;
+}
+
 #srcContents #alimpanTitle {
-    padding: 0 7px;
+    padding: 0 6px;
     align-items: center;
     justify-content: space-between;
 }
 
-#alimpan .circle {
+#alimpan span {
     width: 20px;
     height: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #909090;
+    margin-right: 8px;
+    cursor: pointer;
+
+    transition: all 1s; /* 전이효과:변화되는 과정을 애니메이션으로 볼 수있음 */
 }
 
-#alimpan .squre {
-    width: 34px;
-    height: 20px;
-    border-radius: 10px;
+#alimpan #alimpanImg{
+        cursor: pointer;
+}
+
+
+#alimpan span.alimpanSelected{
+    width: 40px;
     background-color: #1078bc;
 
 }
 
-#alimpan .squre,
-#alimpan .circle {
-    margin-right: 6px;
+#alimpan #aipImg{
+    height: 240px;
+    overflow: hidden;
 }
 
 
 #srcContents .lineBox,
 #serviceBox, #api{
     border: 1px solid #ddd;
-}
-
-#srcContents #doumCenter {
-    width: 280px;
-    padding-left: 7px;
 }
 
 #srcContents #doumCenter h2 {

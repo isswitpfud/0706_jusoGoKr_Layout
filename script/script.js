@@ -114,22 +114,83 @@ $(function () {
 
     $("div.apiBox").eq(1).click(function () {
         window.open("addrlink/developerCenter_02.html");
-         return false;
+        return false;
     });
 
     $("div.apiBox").eq(2).click(function () {
         window.open("addrlink/developerCenter_03.html");
-         return false;
+        return false;
     });
 
     $("div.apiBox").eq(3).click(function () {
         window.open("addrlink/developerCenter_04.html");
-         return false;
+        return false;
     });
 
 
 
+    /*  #contents #alimpan 알림판 슬라이드*/
+    /* toggle토글 --> 토근값 */
+
+    var token = false;
+    var rotationChk = setInterval(fnshuttleFrame, 3000);
+
+
+    function fnshuttleFrame() {
+
+        if (token == false) {
+            $("#alimpanIcon>span").removeClass("alimpanSelected");
+            $("#alimpanIcon>span").eq(1).addClass("alimpanSelected");
+
+
+            $("div#shuttleFrame").animate({
+                    "margin-left": "-276px"
+                },
+                1000,
+                function () {
+                    token = true;
+                }
+            );
+        }
+
+
+        if (token == true) {
+
+            $("#alimpanIcon>span").removeClass("alimpanSelected");
+            $("#alimpanIcon>span").eq(0).addClass("alimpanSelected");
+
+            $("div#shuttleFrame").animate({
+                    "margin-left": "0px"
+                },
+                1000,
+                function () {
+                    token = false;
+                }
+            );
+        }
+    }
+
+    /*alimpan 영역 슬라이드쇼 애니메이션 시작.정지*/
+    var animToken = 0;
+    $("#alimpan #alimpanTitle #alimpanImg>img").click(function () {
+
+        if (animToken == 0) {
+            $(this).attr("src", "images/btn_play.gif"); //일시중지
+            animToken = 1;
+            clearInterval(rotationChk); //슬라이드 순환 멈춤
+        }
+
+        else{
+            $(this).attr("src", "images/btn_ps.gif");
+            animToken = 0;
+
+            rotationChk = setInterval(fnshuttleFrame, 3000); //슬라이드 순환 재생
+        }
+
+
+    }); /*alimpan 영역 슬라이드쇼 애니메이션 시작.정지*/
 
 
 
-});
+
+}); /*제이쿼리 탬플릿 코드*/
